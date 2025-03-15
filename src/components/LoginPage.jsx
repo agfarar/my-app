@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage, useIntl } from "react-intl";
 
 function LoginPage() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const intl = useIntl();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,10 +23,8 @@ function LoginPage() {
       });
 
       if (response.ok) {
-        
         navigate("/robots"); 
       } else if (response.status === 401) {
-        
         setError("Error de autenticación. Revise sus credenciales");
       } else {
         setError("Ocurrió un error inesperado");
@@ -37,28 +37,36 @@ function LoginPage() {
 
   return (
     <div style={{ maxWidth: 400, margin: "0 auto", textAlign: "center" }}>
-      <h1>Adopta un Robot con Robot Lovers!</h1>
-      <h2>Inicio de sesión</h2>
+      <h1>
+        <FormattedMessage id="adoptionTitle" />
+      </h1>
+      <h2>
+        <FormattedMessage id="loginTitle" />
+      </h2>
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Nombre de usuario: </label>
+          <label>
+            <FormattedMessage id="username" />
+          </label>
           <input
             type="text"
             value={login}
             onChange={(e) => setLogin(e.target.value)}
-            placeholder="Ingrese su usuario"
+            placeholder={intl.formatMessage({ id: "username" })}
             required
           />
         </div>
 
         <div>
-          <label>Contraseña: </label>
+          <label>
+            <FormattedMessage id="password" />
+          </label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Ingrese su contraseña"
+            placeholder={intl.formatMessage({ id: "password" })}
             required
           />
         </div>
@@ -69,12 +77,17 @@ function LoginPage() {
           </div>
         )}
 
-        <button type="submit">Ingresar</button>
-        <button type="button" onClick={() => {
-          setLogin("");
-          setPassword("");
-          setError("");
-        }}>
+        <button type="submit">
+          <FormattedMessage id="loginTitle" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setLogin("");
+            setPassword("");
+            setError("");
+          }}
+        >
           Cancelar
         </button>
       </form>

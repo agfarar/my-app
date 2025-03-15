@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 function RobotsListPage() {
   const [robots, setRobots] = useState([]);
@@ -24,7 +25,9 @@ function RobotsListPage() {
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-4">Listado de Robots para Adopción</h1>
+      <h1 className="mb-4">
+        <FormattedMessage id="robotListTitle" />
+      </h1>
       {error ? (
         <div className="alert alert-danger" role="alert">
           {error}
@@ -33,9 +36,9 @@ function RobotsListPage() {
         <table className="table table-striped">
           <thead className="thead-dark">
             <tr>
-              <th>Nombre</th>
-              <th>Modelo</th>
-              <th>Empresa Fabricante</th>
+              <th><FormattedMessage id="name" /></th>
+              <th><FormattedMessage id="model" /></th>
+              <th><FormattedMessage id="manufacturer" /></th>
             </tr>
           </thead>
           <tbody>
@@ -61,6 +64,3 @@ function RobotsListPage() {
 }
 
 export default RobotsListPage;
-
-
-

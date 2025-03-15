@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 function RobotDetailPage() {
   const { id } = useParams();
@@ -32,7 +33,7 @@ function RobotDetailPage() {
           {error}
         </div>
         <Link to="/robots" className="btn btn-primary mt-2">
-          Volver al listado
+          <FormattedMessage id="backToList" />
         </Link>
       </div>
     );
@@ -48,7 +49,9 @@ function RobotDetailPage() {
 
   return (
     <div className="container mt-4">
-      <h1>Detalle del Robot: {robot.nombre}</h1>
+      <h1>
+        <FormattedMessage id="detailTitle" values={{ nombre: robot.nombre }} />
+      </h1>
       <div className="card mb-4">
         {robot.imagen && (
           <img
@@ -64,16 +67,25 @@ function RobotDetailPage() {
             <strong>Empresa Fabricante:</strong> {robot.empresaFabricante}
           </p>
           <p className="card-text">
-            <strong>Año de Fabricación:</strong> {robot.añoFabricacion}
+            <strong>
+              <FormattedMessage id="manufacturingYear" />
+            </strong>{" "}
+            {robot.añoFabricacion}
           </p>
           <p className="card-text">
-            <strong>Capacidad de Procesamiento:</strong> {robot.capacidadProcesamiento}
+            <strong>
+              <FormattedMessage id="processingCapacity" />
+            </strong>{" "}
+            {robot.capacidadProcesamiento}
           </p>
           <p className="card-text">
-            <strong>Características Adicionales:</strong> {robot.humor}
+            <strong>
+              <FormattedMessage id="additionalFeatures" />
+            </strong>{" "}
+            {robot.humor}
           </p>
           <Link to="/robots" className="btn btn-primary">
-            Volver al listado
+            <FormattedMessage id="backToList" />
           </Link>
         </div>
       </div>
@@ -82,4 +94,3 @@ function RobotDetailPage() {
 }
 
 export default RobotDetailPage;
-

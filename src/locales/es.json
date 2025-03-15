@@ -1,0 +1,16 @@
+{
+    "robotListTitle": "Listado de Robots para Adopción",
+    "name": "Nombre",
+    "model": "Modelo",
+    "manufacturer": "Empresa Fabricante",
+    "detailTitle": "Detalle del Robot: {nombre}",
+    "manufacturingYear": "Año de Fabricación:",
+    "processingCapacity": "Capacidad de Procesamiento:",
+    "additionalFeatures": "Características Adicionales:",
+    "backToList": "Volver al listado",
+    "adoptionTitle": "Adopta un Robot con Robot Lovers!",
+    "loginTitle": "Inicio de sesión",
+    "username": "Nombre de usuario:",
+    "password": "Contraseña:"
+  }
+  

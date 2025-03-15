@@ -1,0 +1,16 @@
+{
+    "robotListTitle": "Robots List for Adoption",
+    "name": "Name",
+    "model": "Model",
+    "manufacturer": "Manufacturer",
+    "detailTitle": "Robot Details: {nombre}",
+    "manufacturingYear": "Manufacturing Year:",
+    "processingCapacity": "Processing Capacity:",
+    "additionalFeatures": "Additional Features:",
+    "backToList": "Back to list",
+    "adoptionTitle": "Adopt a Robot with Robot Lovers!",
+    "loginTitle": "Login",
+    "username": "Username:",
+    "password": "Password:"
+  }
+  
